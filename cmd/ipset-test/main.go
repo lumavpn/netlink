@@ -11,7 +11,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/vishvananda/netlink"
+	"github.com/sagernet/netlink"
 )
 
 type command struct {

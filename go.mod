@@ -1,8 +1,8 @@
-module github.com/vishvananda/netlink
+module github.com/sagernet/netlink
 
 go 1.12
 
 require (
-	github.com/vishvananda/netns v0.0.0-20200728191858-db3c7e526aae
-	golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1
+	github.com/vishvananda/netns v0.0.0-20211101163701-50045581ed74
+	golang.org/x/sys v0.0.0-20220731174439-a90be440212d
 )

@@ -1,7 +1,7 @@
 package netlink
 
 import (
-	"github.com/vishvananda/netlink/nl"
+	"github.com/sagernet/netlink/nl"
 	"golang.org/x/sys/unix"
 )
 
