@@ -1,6 +1,6 @@
 module github.com/sagernet/netlink
 
-go 1.12
+go 1.18
 
 require (
 	github.com/vishvananda/netns v0.0.0-20211101163701-50045581ed74
