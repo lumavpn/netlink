@@ -44,8 +44,12 @@ func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 	msg.Scope = unix.RT_SCOPE_UNIVERSE
 	msg.Table = unix.RT_TABLE_UNSPEC
 	msg.Type = unix.RTN_UNSPEC
-	if req.NlMsghdr.Flags&unix.NLM_F_CREATE > 0 {
-		msg.Type = unix.RTN_UNICAST
+	if rule.Table >= 256 {
+		msg.Type = unix.FR_ACT_TO_TBL
+	} else if rule.Goto >= 0 {
+		msg.Type = unix.FR_ACT_GOTO
+	} else if req.NlMsghdr.Flags&unix.NLM_F_CREATE > 0 {
+		msg.Type = unix.FR_ACT_NOP
 	}
 	if rule.Invert {
 		msg.Flags |= FibRuleInvert
@@ -146,7 +150,6 @@ func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 		req.AddData(nl.NewRtAttr(nl.FRA_OIFNAME, []byte(rule.OifName+"\x00")))
 	}
 	if rule.Goto >= 0 {
-		msg.Type = nl.FR_ACT_GOTO
 		b := make([]byte, 4)
 		native.PutUint32(b, uint32(rule.Goto))
 		req.AddData(nl.NewRtAttr(nl.FRA_GOTO, b))
