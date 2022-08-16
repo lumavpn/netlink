@@ -47,6 +47,7 @@ func (r Rule) String() string {
 // NewRule return empty rules.
 func NewRule() *Rule {
 	return &Rule{
+		Table:             -1,
 		SuppressIfgroup:   -1,
 		SuppressPrefixlen: -1,
 		Priority:          -1,

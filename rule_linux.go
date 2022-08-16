@@ -44,7 +44,7 @@ func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 	msg.Scope = unix.RT_SCOPE_UNIVERSE
 	msg.Table = unix.RT_TABLE_UNSPEC
 	msg.Type = unix.RTN_UNSPEC
-	if rule.Table >= 256 {
+	if rule.Table >= 0 {
 		msg.Type = unix.FR_ACT_TO_TBL
 	} else if rule.Goto >= 0 {
 		msg.Type = unix.FR_ACT_GOTO
@@ -125,7 +125,7 @@ func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 		native.PutUint32(b, uint32(rule.TunID))
 		req.AddData(nl.NewRtAttr(nl.FRA_TUN_ID, b))
 	}
-	if rule.Table >= 256 {
+	if rule.Table >= 0 {
 		b := make([]byte, 4)
 		native.PutUint32(b, uint32(rule.Table))
 		req.AddData(nl.NewRtAttr(nl.FRA_TABLE, b))
