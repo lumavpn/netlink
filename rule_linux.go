@@ -44,7 +44,9 @@ func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 	msg.Scope = unix.RT_SCOPE_UNIVERSE
 	msg.Table = unix.RT_TABLE_UNSPEC
 	msg.Type = unix.RTN_UNSPEC
-	if rule.Table >= 0 {
+	if rule.Type > 0 {
+		msg.Type = rule.Type
+	} else if rule.Table >= 0 {
 		msg.Type = unix.FR_ACT_TO_TBL
 	} else if rule.Goto >= 0 {
 		msg.Type = unix.FR_ACT_GOTO

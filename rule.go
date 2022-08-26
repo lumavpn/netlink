@@ -10,6 +10,7 @@ type Rule struct {
 	Priority          int
 	Family            int
 	Table             int
+	Type              uint8
 	Mark              int
 	Mask              int
 	Tos               uint
