@@ -39,7 +39,7 @@ func (h *Handle) RuleDel(rule *Rule) error {
 
 func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 	msg := nl.NewRtMsg()
-	msg.Family = unix.AF_INET
+	msg.Family = unix.AF_UNSPEC
 	msg.Protocol = unix.RTPROT_BOOT
 	msg.Scope = unix.RT_SCOPE_UNIVERSE
 	msg.Table = unix.RT_TABLE_UNSPEC
