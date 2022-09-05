@@ -221,7 +221,7 @@ func (h *Handle) RuleListFiltered(family int, filter *Rule, filterMask uint64) (
 		}
 
 		rule := NewRule()
-
+		rule.Family = int(msg.Family)
 		rule.Invert = msg.Flags&FibRuleInvert > 0
 		rule.Tos = uint(msg.Tos)
 
