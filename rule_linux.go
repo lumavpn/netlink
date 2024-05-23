@@ -131,8 +131,6 @@ func ruleHandle(rule *Rule, req *nl.NetlinkRequest) error {
 		b := make([]byte, 4)
 		native.PutUint32(b, uint32(rule.Table))
 		req.AddData(nl.NewRtAttr(nl.FRA_TABLE, b))
-	}
-	if msg.Table > 0 {
 		if rule.SuppressPrefixlen >= 0 {
 			b := make([]byte, 4)
 			native.PutUint32(b, uint32(rule.SuppressPrefixlen))
