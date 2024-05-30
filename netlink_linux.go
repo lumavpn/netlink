@@ -1,6 +1,6 @@
 package netlink
 
-import "github.com/sagernet/netlink/nl"
+import "github.com/breakfreesoftware/netlink/nl"
 
 // Family type definitions
 const (

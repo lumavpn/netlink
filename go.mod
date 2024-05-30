@@ -1,4 +1,4 @@
-module github.com/sagernet/netlink
+module github.com/breakfreesoftware/netlink
 
 go 1.18
 

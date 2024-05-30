@@ -7,7 +7,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/sagernet/netlink/nl"
+	"github.com/breakfreesoftware/netlink/nl"
 	"golang.org/x/sys/unix"
 )
 
