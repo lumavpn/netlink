@@ -1,4 +1,4 @@
-module github.com/breakfreesoftware/netlink
+module github.com/lumavpn/netlink
 
 go 1.18
 

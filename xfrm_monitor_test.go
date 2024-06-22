@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/breakfreesoftware/netlink/nl"
+	"github.com/lumavpn/netlink/nl"
 )
 
 func TestXfrmMonitorExpire(t *testing.T) {

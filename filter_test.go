@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/breakfreesoftware/netlink/nl"
+	"github.com/lumavpn/netlink/nl"
 	"golang.org/x/sys/unix"
 )
 

@@ -3,7 +3,7 @@ package netlink
 import (
 	"encoding/binary"
 
-	"github.com/breakfreesoftware/netlink/nl"
+	"github.com/lumavpn/netlink/nl"
 )
 
 var (

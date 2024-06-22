@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/breakfreesoftware/netlink/nl"
+	"github.com/lumavpn/netlink/nl"
 	"github.com/vishvananda/netns"
 	"golang.org/x/sys/unix"
 )

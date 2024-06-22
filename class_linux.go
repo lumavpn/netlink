@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"syscall"
 
-	"github.com/breakfreesoftware/netlink/nl"
+	"github.com/lumavpn/netlink/nl"
 	"golang.org/x/sys/unix"
 )
 
